@@ -1,4 +1,5 @@
 ﻿using ByteBankIO;
+using System.Text;
 
 class Program
 {
@@ -28,10 +29,15 @@ class Program
 
     static void writeBuffer(byte[] buffer)
     {
-        foreach (var item in buffer) 
-        {
-            Console.Write(item);
-            Console.Write(" ");
-        }
+        var utf8 = new UTF8Encoding();
+
+        var text = utf8.GetString(buffer);
+        Console.Write(text);
+
+        //foreach (var item in buffer) 
+        //{
+        //    Console.Write(item);
+        //    Console.Write(" ");
+        //}
     }
 }
