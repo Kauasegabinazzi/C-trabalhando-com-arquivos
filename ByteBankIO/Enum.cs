@@ -8,7 +8,7 @@ namespace ByteBankIO
 {
     internal class Enum
     {
-        static void Main()
+        static void read()
         {
 
             var btnCancelar = new Botao();
