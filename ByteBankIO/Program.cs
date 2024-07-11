@@ -21,7 +21,8 @@ class Program
             while (byteNumber != 0)
             {
                 byteNumber = flowFile.Read(buffer, 0, 1024);
-                writeBuffer(buffer);
+                Console.WriteLine($"Bytes lidos: {byteNumber}");
+                writeBuffer(buffer, byteNumber);
             }
 
             flowFile.Close();
@@ -34,11 +35,11 @@ class Program
         throw new NotImplementedException();
     }
 
-    static void writeBuffer(byte[] buffer)
+    static void writeBuffer(byte[] buffer,int readBytes)
     {
         var utf8 = new UTF8Encoding();
 
-        var text = utf8.GetString(buffer);
+        var text = utf8.GetString(buffer, 0, readBytes);
         Console.Write(text);
 
         //foreach (var item in buffer) 
