@@ -7,23 +7,42 @@ partial class Program
     {
         var fileAdress = "contas.txt";
 
-        using(var flowFile = new FileStream(fileAdress,FileMode.Open))
+        //using(var flowFile = new FileStream(fileAdress,FileMode.Open))
+        //{
+        //    var reader = new StreamReader(flowFile);
+
+        //    //var line = reader.ReadLine();
+
+        //    //var text = reader.ReadToEnd();
+
+        //    //int number = reader.Read();
+
+        //    while (!reader.EndOfStream) 
+        //    {
+        //        var line = reader.ReadLine();
+        //        Console.WriteLine(line);
+        //    }
+        //}
+
+        using (var fluxoDeArquivo = new FileStream(fileAdress, FileMode.Open))
+        using (var leitor = new StreamReader(fluxoDeArquivo))
         {
-            var reader = new StreamReader(flowFile);
 
-            //var line = reader.ReadLine();
+        }
 
-            //var text = reader.ReadToEnd();
+        //Usamos o ReadLine para a leitura de uma linha do arquivo e a propriedade EndOfStream para verificar se chegamos ao fim do stream:
 
-            //int number = reader.Read();
-
-            while (!reader.EndOfStream) 
+        using (var fluxoDeArquivo = new FileStream(fileAdress, FileMode.Open))
+        using (var leitor = new StreamReader(fluxoDeArquivo))
+        {
+            while (!leitor.EndOfStream)
             {
-                var line = reader.ReadLine();
-                Console.WriteLine(line);
+                var linha = leitor.ReadLine();
+                Console.WriteLine(linha);
             }
         }
 
-        Console.ReadLine();
+
+                Console.ReadLine();
     }
 }
