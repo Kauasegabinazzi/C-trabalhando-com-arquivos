@@ -6,20 +6,27 @@ class Program
     static void Main(string[] args)
     {
         var addressFile = "contas.txt";
-        var byteNumber = -1;
-        var flowFile = new FileStream(addressFile, FileMode.Open);
 
-        var buffer = new byte[1024]; // 1Kb;
+        //using verifica se o fluxo não é nulo
 
-        byteNumber = flowFile.Read(buffer, 0, 1024);
+        using (var flowFile = new FileStream(addressFile, FileMode.Open))
+        {
+            var byteNumber = -1;
 
-        while (byteNumber != 0) {
+
+            var buffer = new byte[1024]; // 1Kb;
+
             byteNumber = flowFile.Read(buffer, 0, 1024);
-            writeBuffer(buffer);
+
+            while (byteNumber != 0)
+            {
+                byteNumber = flowFile.Read(buffer, 0, 1024);
+                writeBuffer(buffer);
+            }
+
+            flowFile.Close();
+            Console.ReadLine();
         }
-
-        Console.ReadLine();
-
     }
 
     private static object CurrentAccount(int v1, int v2)
