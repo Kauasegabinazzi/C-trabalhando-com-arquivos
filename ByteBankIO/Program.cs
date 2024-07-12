@@ -21,7 +21,7 @@ partial class Program
             {
                 var line = reader.ReadLine();
                 var Count = ConvertStringToContaCorrente(line);
-                var msg = $"Count number {Count.Numero}, ag{Count.Agencia}, balance {Count.Saldo}";
+                var msg = $"{Count.Titular.Nome} : Count number {Count.Numero}, ag{Count.Agencia}, balance {Count.Saldo}";
                 Console.WriteLine(msg);
             }
         }
