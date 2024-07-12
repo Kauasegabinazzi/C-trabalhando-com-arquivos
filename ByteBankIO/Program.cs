@@ -5,26 +5,31 @@ partial class Program
 {
     static void Main(string[] args)
     {
-        var fileAdress = "contas.txt";
+        create();
 
-        using (var flowFile = new FileStream(fileAdress, FileMode.Open))
-        {
-            var reader = new StreamReader(flowFile);
+        Console.ReadLine();
 
-            //var line = reader.ReadLine();
+        #region first
+        //var fileAdress = "contas.txt";
 
-            //var text = reader.ReadToEnd();
+        //using (var flowFile = new FileStream(fileAdress, FileMode.Open))
+        //{
+        //    var reader = new StreamReader(flowFile);
 
-            //int number = reader.Read();
+        //    //var line = reader.ReadLine();
 
-            while (!reader.EndOfStream)
-            {
-                var line = reader.ReadLine();
-                var Count = ConvertStringToContaCorrente(line);
-                var msg = $"{Count.Titular.Nome} : Count number {Count.Numero}, ag{Count.Agencia}, balance {Count.Saldo}";
-                Console.WriteLine(msg);
-            }
-        }
+        //    //var text = reader.ReadToEnd();
+
+        //    //int number = reader.Read();
+
+        //    while (!reader.EndOfStream)
+        //    {
+        //        var line = reader.ReadLine();
+        //        var Count = ConvertStringToContaCorrente(line);
+        //        var msg = $"{Count.Titular.Nome} : Count number {Count.Numero}, ag{Count.Agencia}, balance {Count.Saldo}";
+        //        Console.WriteLine(msg);
+        //    }
+        //}
 
         //using (var fluxoDeArquivo = new FileStream(fileAdress, FileMode.Open))
         //using (var leitor = new StreamReader(fluxoDeArquivo))
@@ -69,5 +74,8 @@ partial class Program
 
             return result;
         }
+
+        #endregion
     }
+
 }
