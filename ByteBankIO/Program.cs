@@ -5,7 +5,7 @@ partial class Program
 {
     static void Main(string[] args)
     {
-        createFileWithWriter();
+        testWrite();
 
         Console.ReadLine();
 

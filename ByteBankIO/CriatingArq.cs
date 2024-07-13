@@ -32,5 +32,22 @@ partial class Program
         }
 
     }
+
+    static void testWrite()
+    {
+        var newAdress = "test.txt";
+
+        using (var fileFlow = new FileStream(newAdress, FileMode.Create))
+        using (var writer = new StreamWriter(fileFlow))
+        {
+            for(int i = 0; i < 1000000; i++)
+            {
+                writer.WriteLine($"line {i}");
+                writer.Flush(); // escreve no arquivo
+                Console.WriteLine($"line {i} foi escrita. Tecle enter.....");
+                Console.ReadLine();
+            }
+        }
+    }
 }
 
