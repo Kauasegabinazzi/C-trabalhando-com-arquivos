@@ -5,8 +5,18 @@ partial class Program
 {
     static void Main(string[] args)
     {
-        testWrite();
 
+        var newAdress = "testWriters.csv";
+
+        using (var fileFlow = new FileStream(newAdress, FileMode.Create))
+        using (var writer = new StreamWriter(fileFlow))
+        {
+            writer.WriteLine(true);
+            writer.WriteLine(false);
+            writer.WriteLine(454562342);
+        }
+
+        Console.WriteLine("finalizada");
         Console.ReadLine();
 
         #region first
