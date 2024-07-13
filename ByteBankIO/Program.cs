@@ -6,15 +6,18 @@ partial class Program
     static void Main(string[] args)
     {
 
-        var newAdress = "testWriters.csv";
+        //var newAdress = "testWriters.csv";
 
-        using (var fileFlow = new FileStream(newAdress, FileMode.Create))
-        using (var writer = new StreamWriter(fileFlow))
-        {
-            writer.WriteLine(true);
-            writer.WriteLine(false);
-            writer.WriteLine(454562342);
-        }
+        //using (var fileFlow = new FileStream(newAdress, FileMode.Create))
+        //using (var writer = new StreamWriter(fileFlow))
+        //{
+        //    writer.WriteLine(true);
+        //    writer.WriteLine(false);
+        //    writer.WriteLine(454562342);
+        //}
+
+        writerBinary();
+        readerBinary();
 
         Console.WriteLine("finalizada");
         Console.ReadLine();
