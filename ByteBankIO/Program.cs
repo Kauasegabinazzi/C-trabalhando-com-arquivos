@@ -20,8 +20,20 @@ partial class Program
         //writerBinary();
         //readerBinary();
 
-        useStream();
+        //useStream();
 
+        var lines = File.ReadAllLines("contas.txt");
+        Console.WriteLine(lines.Length);
+
+        //foreach (var line in lines) {
+        //    Console.WriteLine(line);
+        //}
+
+        var bytesFile = File.ReadAllBytes("contas.txt");
+
+        Console.WriteLine($"File conta.txt possui {bytesFile.Length} bytes");
+
+        File.WriteAllText("writeWithClassFile.txt", "Testing file.writealltext");
         Console.WriteLine("finalizada");
         Console.ReadLine();
 
