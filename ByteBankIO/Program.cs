@@ -1,4 +1,5 @@
 ﻿using ByteBankIO;
+using System.Net.Security;
 using System.Text;
 
 partial class Program
@@ -16,8 +17,10 @@ partial class Program
         //    writer.WriteLine(454562342);
         //}
 
-        writerBinary();
-        readerBinary();
+        //writerBinary();
+        //readerBinary();
+
+        useStream();
 
         Console.WriteLine("finalizada");
         Console.ReadLine();

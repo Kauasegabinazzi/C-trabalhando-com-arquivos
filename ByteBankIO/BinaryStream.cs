@@ -31,4 +31,5 @@ partial class Program
             Console.WriteLine($"{agency}/{number}/{balance}/{holder}");
         }
     }
+
 }
